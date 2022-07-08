@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  /* bg-gradient-to-tr from-green-400 to-blue-700 */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:  url("/public/seabg2.jpg") rgba(60,60,100,100);
+  background-blend-mode: overlay;
+  background-size:cover;
+  background-attachment:fixed;
+}
