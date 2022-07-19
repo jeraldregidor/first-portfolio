@@ -14,6 +14,7 @@ import { FaGraduationCap } from "react-icons/fa";
 import { FaBrain } from "react-icons/fa";
 import { FaCogs } from "react-icons/fa";
 import CardCube from "./component/CardCube";
+import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
   const defaultBC = <BCCompPic />;
@@ -51,7 +52,7 @@ function App() {
 
   const [isLoading, setLoading] = useState(true);
   setTimeout(() => {
-    setLoading(false);   // TODO: Set it to false
+    setLoading(false); // TODO: Set it to false
   }, 6000);
 
   return (
@@ -71,17 +72,25 @@ function App() {
             <BigCard comp={dispComponent} />
           </section>
           <section className=" h-auto w-full flex items-center justify-center mb-2">
-            <div className="grid grid-cols-4 md:grid-cols-2 w-full md:w-96 md:gap-5">
-              {labels.map((item) => (
-                <Card
-                  key={item.name}
-                  logo={item.logo}
-                  name={item.name}
-                  noAction={() => setDispComponent()}
-                  clickDisplay={() => setDispComponent(item.component)}
-                />
-              ))}
-            </div>
+            <AnimatePresence>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <div className="grid grid-cols-4 md:grid-cols-2 w-full md:w-96 md:gap-5">
+                  {labels.map((item) => (
+                    <Card
+                      key={item.name}
+                      logo={item.logo}
+                      name={item.name}
+                      noAction={() => setDispComponent()}
+                      clickDisplay={() => setDispComponent(item.component)}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </section>
         </div>
       )}
