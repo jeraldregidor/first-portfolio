@@ -4,10 +4,15 @@
   "homepage": "https://jerald1997.github.io/portfolio",
   "private": true,
   "dependencies": {
+    "@react-three/drei": "^9.17.1",
+    "@react-three/fiber": "^8.2.0",
+    "framer-motion": "^6.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "react-typewriter-effect": "^1.1.0",
+    "three": "^0.142.0"
   },
   "scripts": {
     "predeploy": "npm run build",

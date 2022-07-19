@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import BigCard from "./component/BigCard";
 import Card from "./component/Card";
 import Greeting from "./component/Greeting";
@@ -12,6 +13,7 @@ import { FaUser } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa";
 import { FaBrain } from "react-icons/fa";
 import { FaCogs } from "react-icons/fa";
+import CardCube from "./component/CardCube";
 
 function App() {
   const defaultBC = <BCCompPic />;
@@ -47,27 +49,42 @@ function App() {
     },
   ];
 
+  const [isLoading, setLoading] = useState(true);
+  setTimeout(() => {
+    setLoading(false);   // TODO: Set it to false
+  }, 6000);
+
   return (
-    <div className="h-screen w-auto m-2 grid gap-2 grid-rows-[auto_1fr_90px] md:grid-cols-2 md:grid-template-rows-none">
-      <section className="flex flex-wrap h-fit">
-        <Greeting />
-      </section>
-      <section className="row-span-2 md:mt-20 md:mr-10 relative">
-        <BigCard comp={dispComponent} />
-      </section>
-      <section className=" h-auto w-full flex items-center justify-center mb-2">
-        <div className="grid grid-cols-4 md:grid-cols-2 w-full md:w-96 md:gap-5">
-          {labels.map((item) => (
-            <Card
-              key={item.name}
-              logo={item.logo}
-              name={item.name}
-              noAction={() => setDispComponent()}
-              clickDisplay={() => setDispComponent(item.component)}
-            />
-          ))}
+    <div>
+      {isLoading ? (
+        <div className="flex-row justify-center items-center text-center text-white font text-2xl h-screen">
+          <div className="">
+            <CardCube />
+          </div>
         </div>
-      </section>
+      ) : (
+        <div className="h-screen w-auto m-2 grid gap-2 grid-rows-[minmax(180px,auto)_1fr_90px] md:grid-cols-2 md:grid-template-rows-none">
+          <section className="flex flex-wrap min-h-1/2">
+            <Greeting />
+          </section>
+          <section className="row-span-2 md:mt-20 md:mr-10 relative overflow-x-hidden">
+            <BigCard comp={dispComponent} />
+          </section>
+          <section className=" h-auto w-full flex items-center justify-center mb-2">
+            <div className="grid grid-cols-4 md:grid-cols-2 w-full md:w-96 md:gap-5">
+              {labels.map((item) => (
+                <Card
+                  key={item.name}
+                  logo={item.logo}
+                  name={item.name}
+                  noAction={() => setDispComponent()}
+                  clickDisplay={() => setDispComponent(item.component)}
+                />
+              ))}
+            </div>
+          </section>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-import { FaClipboardCheck, FaEnvelope, FaLinkedin, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaClipboardCheck,
+  FaEnvelope,
+  FaLinkedin,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const BCCompPerson = (props) => {
   const emailDefault = (
@@ -9,10 +15,12 @@ const BCCompPerson = (props) => {
     </div>
   );
 
-  const emailCopyConfirm = (<div className="flex flex-wrap items-center italic text-green-500 items-center">
-    <FaClipboardCheck className="w-9 h-auto md:w-20 md:h-auto mr-3 "/>
-    <div>Email Copied</div>
-    </div>);
+  const emailCopyConfirm = (
+    <div className="flex flex-wrap items-center italic text-green-500 items-center">
+      <FaClipboardCheck className="w-9 h-auto md:w-20 md:h-auto mr-3 " />
+      <div>Email Copied</div>
+    </div>
+  );
 
   const [emailSection, setEmailSection] = useState(emailDefault);
 
@@ -23,11 +31,15 @@ const BCCompPerson = (props) => {
     setTimeout(() => {
       setEmailSection(emailDefault);
     }, 1000);
-      
   };
 
   return (
-    <div className="flex w-full h-full flex-wrap items-center px-10  rounded-3xl bg-slate-700 bg-opacity-50 overflow-auto">
+    <motion.div
+      initial={{ x: 500, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ type: "bounce", stiffness: 30, duration: 1 }}
+      className="flex w-full h-full flex-wrap items-center px-10  rounded-3xl bg-slate-700 bg-opacity-50 overflow-auto"
+    >
       <button
         onClick={handleClickCancel}
         className="absolute top-6 right-6 bg-red-500 w-6 rounded-full font-bold ring-1 ring-black hover:scale-125"
@@ -64,7 +76,7 @@ const BCCompPerson = (props) => {
           </div>
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

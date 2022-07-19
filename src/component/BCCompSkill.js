@@ -5,6 +5,7 @@ import { FaJsSquare } from "react-icons/fa";
 import { FaReact } from "react-icons/fa";
 import { FaJava } from "react-icons/fa";
 import { FaPowerOff } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const fronts = [
   {
@@ -22,7 +23,7 @@ const fronts = [
   {
     logo: (
       <div className="mr-1 w-10 h-10 invert">
-        <img src="./images/tailwind.png" />
+        <img src={process.env.PUBLIC_URL + "/images/tailwind.png"} />
       </div>
     ),
     title: "Tailwind",
@@ -55,7 +56,7 @@ const dBases = [
   {
     logo: (
       <div className="mr-1 w-10 h-10 invert">
-        <img src="./images/mysqllogo.png" />
+        <img src={process.env.PUBLIC_URL + "/images/mysqllogo.png"} />
       </div>
     ),
     title: "MySQL",
@@ -63,7 +64,7 @@ const dBases = [
   {
     logo: (
       <div className="mr-1 w-10 h-10 invert">
-        <img src="./images/postgreslogo.png" />
+        <img src={process.env.PUBLIC_URL + "/images/postgreslogo.png"} />
       </div>
     ),
     title: "PostgreSQL",
@@ -88,7 +89,12 @@ const skillSections = [
 const BCCompSkill = (props) => {
   const handleClickCancel = () => props.defaultDisplay();
   return (
-    <div className="flex w-full h-full flex-wrap items-center rounded-3xl bg-slate-700 bg-opacity-50 overflow-auto p-2">
+    <motion.div
+      initial={{ x: 500, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ type: "bounce", stiffness: 30, duration: 1 }}
+      className="flex w-full h-full flex-wrap items-center rounded-3xl bg-slate-700 bg-opacity-50 overflow-auto p-2"
+    >
       <button
         onClick={handleClickCancel}
         className="absolute top-6 right-6 bg-red-500 w-6 rounded-full font-bold ring-1 ring-black hover:scale-125"
@@ -119,7 +125,9 @@ const BCCompSkill = (props) => {
         ))}
 
         <section className="bg-slate-700 bg-opacity-50 flex-row rounded-md">
-          <div className="font-bold mt-2 ml-5 text-lg md:text-2xl">Other Skills</div>
+          <div className="font-bold mt-2 ml-5 text-lg md:text-2xl">
+            Other Skills
+          </div>
           <ul className="text-sm list-disc ml-10">
             <li>
               Understanding how electronics are represented visually, and the
@@ -133,7 +141,7 @@ const BCCompSkill = (props) => {
           </ul>
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
