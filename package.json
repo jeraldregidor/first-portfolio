@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "https://jerald1997.github.io/portfolio",
+  "homepage": "https://jeraldregidor.github.io/first-portfolio",
   "private": true,
   "dependencies": {
     "@react-three/drei": "^9.17.1",
