@@ -4,7 +4,7 @@ import TypeWriterEffect from 'react-typewriter-effect';
 const greeting = () => {
   return (
     <div>
-      <h1 className="text-3xl pl-8 font-thin pt-7 text-white md:text-4xl">
+      <h1 className="text-3xl pl-8 font-thin pt-7 text-white">
       <TypeWriterEffect
             startDelay={100}
             cursorColor="white"
@@ -13,7 +13,7 @@ const greeting = () => {
             hideCursorAfterText={true}
           />
       </h1>
-      <h1 className="text-5xl pl-8 font-extrabold text-white md:text-6xl">
+      <h1 className="text-4xl pl-8 font-extrabold text-white lg:text-5xl">
       <TypeWriterEffect
             startDelay={800}
             cursorColor="white"
