@@ -115,7 +115,7 @@ const BCCompSkill = (props) => {
             className="bg-slate-700 bg-opacity-50 rounded-md"
             key={skSection.sec}
           >
-            <div className="text mt-2 ml-5 font-bold">{skSection.sec}</div>
+            <div className="mt-2 ml-5 font-bold">{skSection.sec}</div>
             <div className="flex flex-wrap justify-center m-auto">
               <div className="flex-row sm:flex flex-wrap my-3">
                 {skSection.contents.map((cont, index) => (
