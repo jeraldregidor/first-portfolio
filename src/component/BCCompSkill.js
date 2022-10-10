@@ -32,6 +32,14 @@ const fronts = [
     logo: <FaReact className="mr-1 w-10 h-10" />,
     title: "React",
   },
+  {
+    logo: (
+      <div className="mr-1 w-10 h-10 ">
+        <img src={process.env.PUBLIC_URL + "/logo.svg"} />
+      </div>
+    ),
+    title: "Redux",
+  },
 ];
 
 const backs = [
@@ -130,7 +138,7 @@ const BCCompSkill = (props) => {
           </div>
           <ul className="text-sm list-disc ml-10">
             <li>
-              Understanding how electronics are represented visually, and the
+              Understands how electronics are represented visually, and the
               ability to read and analyze electronic circuits.
             </li>
             <li>Knowledgeable on creating arduino projects.</li>

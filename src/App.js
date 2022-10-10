@@ -8,6 +8,7 @@ import BCCompPerson from "./component/BCCompPerson";
 import BCCompEduc from "./component/BCCompEduc";
 import BCCompExp from "./component/BCCompExp";
 import BCCompSkill from "./component/BCCompSkill";
+import BCGitDetails from "./component/BCGitDetails";
 
 import { FaUser } from "react-icons/fa";
 import { FaGraduationCap } from "react-icons/fa";
@@ -15,6 +16,7 @@ import { FaBrain } from "react-icons/fa";
 import { FaCogs } from "react-icons/fa";
 import CardCube from "./component/CardCube";
 import { motion, AnimatePresence } from "framer-motion";
+
 
 function App() {
   const defaultBC = <BCCompPic />;
@@ -66,7 +68,7 @@ function App() {
       ) : (
         <div className="h-screen w-auto m-2 grid gap-2 grid-rows-[minmax(180px,auto)_1fr_90px] md:grid-cols-2 md:grid-template-rows-none">
           <section className="flex flex-wrap min-h-1/2">
-            <Greeting />
+            <Greeting clickGitLogo={() => setDispComponent(<BCGitDetails defaultDisplay={() => setDispComponent(defaultBC)}/>)}/>
           </section>
           <section className="row-span-2 md:mt-20 md:mr-10 relative overflow-x-hidden">
             <BigCard comp={dispComponent} />
