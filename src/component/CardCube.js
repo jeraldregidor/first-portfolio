@@ -50,8 +50,6 @@ const Cube = () => {
     isDoneLoading ? <null /> : (meshAll.current.rotation.x += 0.01);
     isDoneLoading ? <null /> : (meshAll.current.rotation.y += 0.01);
 
-    console.log("Dumaan ako pre");
-
     setTimeout(() => {
       isDoneLoading ? <null /> : (mesh1.current.position.y -= 0.01);
       isDoneLoading ? <null /> : (mesh2.current.position.z += 0.01);
