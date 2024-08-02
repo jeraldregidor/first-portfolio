@@ -148,7 +148,7 @@ const BCCompSkill = (props) => {
             <li>
               Testing Tools (e.g. JUnit, Jacoco, Karate, k6)
             </li>
-            <li>Monitoring Tool (e.g. Grafana Dashboard, Elastic)</li>
+            <li>Monitoring Tools (e.g. Grafana Dashboard, Elastic)</li>
             <li>
               Containerization and Deployment (Azure Pipelines, Docker, Kubernetes, Openshift)
             </li>

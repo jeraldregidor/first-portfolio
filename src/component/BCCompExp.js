@@ -12,7 +12,7 @@ const experiences = [
     company: "Norima Technologies Inc.",
     logoSrc: "/images/norimalogo.jpg",
     role: "Software Engineer",
-    duration: "May 2022 up January 2023",
+    duration: "May 2022 to January 2023",
   },
   {
     company: "Furukawa Electric Autoparts Phil. Inc.",
