@@ -3,10 +3,16 @@ import { motion } from "framer-motion";
 
 const experiences = [
   {
+    company: "ING Hubs Philippines",
+    logoSrc: "/images/inglogo.png",
+    role: "Software Engineer",
+    duration: "January 2023 up to current",
+  },
+  {
     company: "Norima Technologies Inc.",
     logoSrc: "/images/norimalogo.jpg",
     role: "Software Engineer",
-    duration: "May 2022 up to current",
+    duration: "May 2022 up January 2023",
   },
   {
     company: "Furukawa Electric Autoparts Phil. Inc.",

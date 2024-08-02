@@ -77,6 +77,14 @@ const dBases = [
     ),
     title: "PostgreSQL",
   },
+  {
+    logo: (
+      <div className="mr-1 w-10 h-10 invert flex items-center">
+        <img  src={process.env.PUBLIC_URL + "/images/oraclelogo.png"} />
+      </div>
+    ),
+    title: "Oracle",
+  },
 ];
 
 const skillSections = [
@@ -134,17 +142,15 @@ const BCCompSkill = (props) => {
 
         <section className="bg-slate-700 bg-opacity-50 flex-row rounded-md">
           <div className="font-bold mt-2 ml-5 text-lg md:text-2xl">
-            Other Skills
+            Other Tools
           </div>
           <ul className="text-sm list-disc ml-10">
             <li>
-              Understands how electronics are represented visually, and the
-              ability to read and analyze electronic circuits.
+              Testing Tools (e.g. JUnit, Jacoco, Karate, k6)
             </li>
-            <li>Knowledgeable on creating arduino projects.</li>
+            <li>Monitoring Tool (e.g. Grafana Dashboard, Elastic)</li>
             <li>
-              Exposed and knowledgeable in industrial manufacturing setup
-              (Autoparts).
+              Containerization and Deployment (Azure Pipelines, Docker, Kubernetes, Openshift)
             </li>
           </ul>
         </section>
